@@ -48,7 +48,8 @@ Executable xcp_networkd
     xcp,
     xcp.network,
     netlink,
-    systemd
+    systemd,
+    yojson
 
 Executable networkd_db
   CompiledObject:     best

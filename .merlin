@@ -19,3 +19,4 @@ PKG xcp.network
 PKG xen-api-client
 PKG oUnit
 PKG bisect_ppx.runtime
+PKG yojson

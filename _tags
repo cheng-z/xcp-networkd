@@ -39,6 +39,7 @@
 <networkd/networkd.{native,byte}>: pkg_xen-api-client
 <networkd/networkd.{native,byte}>: pkg_netlink
 <networkd/networkd.{native,byte}>: pkg_systemd
+<networkd/networkd.{native,byte}>: pkg_yojson
 <networkd/*.ml{,i}>: use_profiling
 <networkd/*.ml{,i}>: use_networklibs
 <networkd/*.ml{,i}>: pkg_stdext
@@ -52,6 +53,7 @@
 <networkd/*.ml{,i}>: pkg_xen-api-client
 <networkd/*.ml{,i}>: pkg_netlink
 <networkd/*.ml{,i}>: pkg_systemd
+<networkd/*.ml{,i}>: pkg_yojson
 <networkd/networkd.{native,byte}>: custom
 # Executable networkd_db
 <networkd_db/networkd_db.{native,byte}>: use_profiling

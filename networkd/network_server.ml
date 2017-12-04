@@ -1004,6 +1004,23 @@ module Bridge = struct
 		) ()
 end
 
+module Net_sriov = struct
+	open Yojson.Basic
+
+    let exclusive_enable_by_device _ dbg ?(devices=[]) =
+		Debug.with_thread_associated dbg (fun () ->
+            let args = ["--exclusiveEnableByDevice"; (String.concat ", " devices)] in
+            call_script ~timeout:(Some 10.0) !Network_utils.sriov_plugin args
+			|> from_string 
+			|> Util.member "Results"
+			|> Util.to_list
+			|> List.map (fun result -> 
+				[ Util.member "device" result |> Util.to_string
+				; Util.member "status" result |> Util.to_string
+				; Util.member "error" result |> Util.to_string])
+		) ()
+end
+
 module PVS_proxy = struct
 	open PVS_proxy
 
